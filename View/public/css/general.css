@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    background-color: #2b2b2b;
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #2b2b2b;
+}
+
+/* ================================== NAVBAR ================================== */
+
+.navbar-container {
+    width: 100%;
+    height: 5rem;
+    background-color: #646464;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-settings {
+    width: 3rem;
+    height: 2.5rem;
+    background-color: transparent;
+    border: none;
+    margin: 1rem;
+}
+
+.btn-settings img {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    width: 4rem;
+    height: 4rem;
+    margin: 1rem;
+}
+
+/* ============================== WELCOME SECTION ============================== */
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.welcome-container h1 {
+    margin: 1rem 0;
+    font-size: 3.5rem;
+}
+
+.welcome-container h2 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.span-taskly-1 {
+    color: #2B79C2;
+}
+
+.span-taskly-2 {
+    color: #3B4651;
+}
+
+.btn-create-task {
+    width: 9rem;
+    height: 2.5rem;
+    background-color: #318B2D;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1rem;
+    margin: 2rem;
+}
+
+/* ================================== TASKS DESIGN ================================== */
+
+.task-container {
+    width: 100%;
+    height: 5rem;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+}
+
+.task {
+    width: 90%;
+    height: 90%;
+    margin: 0 1rem 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d9d9d9;
+    border-radius: 0.8rem;
+}
+
+.task p {
+    margin: 0 1rem;
+    font-size: 1.2rem;
+}
+
+.task a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #005CFC;
+    font-size: 1.2rem;
+}
+
+.btn-finish-task {
+    width: 2.5rem;
+    height: 2rem;
+    background-color: transparent;
+    border: none;
+    margin: 0 1rem;
+}
+
+.btn-edit-task {
+    width: 2.5rem;
+    height: 2rem;
+    background-color: transparent;
+    border: none;
+    margin: 0 1rem;
+}
+
+.btn-finish-task img, .btn-edit-task img {
+    width: 100%;
+    height: 100%;
+}
+
+.txt-no-task {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+/*------------ FORM CREATE TASK ------------*/
+
+.create-task-form {
+    width: 100%;
+    height: 100%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.create-task-form label {
+    color: #005CFC;
+    font-size: 1.4rem;
+}
+
+.create-task-form input, .create-task-form select, .create-task-form textarea {
+    height: 3rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid #3A5860;
+    border-radius: 0.2rem;
+}
+
+.btn-confirm-create-task {
+    width: 8rem;
+    height: 2.6rem;
+    margin: 1rem 0;
+    background-color: #329625;
+    color: white;
+    border: none !important;
+    border-radius: 0.2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.btn-cancel-create-task {
+    width: 8rem;
+    height: 2.6rem;
+    margin: 1rem 0;
+    background-color: #962525;
+    color: white;
+    border: none !important;
+    border-radius: 0.2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.btn-confirm-edit-task {
+    width: 8rem;
+    height: 2.6rem;
+    margin: 1rem 0;
+    background-color: #329625;
+    color: white;
+    border: none !important;
+    border-radius: 0.2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.btn-cancel-edit-task {
+    width: 8rem;
+    height: 2.6rem;
+    margin: 1rem 0;
+    background-color: #962525;
+    color: white;
+    border: none !important;
+    border-radius: 0.2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.btn-close {
+    margin: 1rem;
+    position: relative;
+    display: flex;
+    align-self: flex-end;
+}
+
+/* -------- DETALLES DE LA TAREA -------- */
+
+.txt-blue-pinted {
+    color: #005CFC;
+}
+
+
+/* ================================== MODO CLARO DE LA APP ================================== */
+
+html.light-mode {
+    background-color: #bbd5ec !important;
+}
+
+body.light-mode {
+    background-color: #bbd5ec !important;
+}
+
+body hr.light-mode {
+    border: 1px solid #000;
+}
+
+.navbar-container.light-mode {
+    background-color: #fff;
+}
+
+.task.light-mode {
+    background-color: #fff;
+}
+
+.welcome-container h1.light-mode {
+    color: black;
+}
+
+.welcome-container h2.light-mode {
+    color: black;
+}
+
+.txt-no-task.light-mode {
+    color: black;
+}
+
+
+
+/* ================================== MEDIA QUERYS ================================== */
+
+@media (max-width: 480px) {
+    .welcome-container h1 {
+        margin: 1rem auto;
+        font-size: 2rem;
+    }
+
+    .welcome-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .txt-no-task {
+        font-size: 1.6rem;
+    }
+
+    .task {
+        flex-direction: column; /* Cambiar la dirección del flex a columna */
+        align-items: center; /* Alinear los elementos al inicio */
+        height: auto; /* Ajustar la altura automáticamente */
+        width: 70rem;
+    }
+
+    .task p, .task a {
+        margin: 0.5rem 1rem; /* Ajustar el margen */
+    }
+
+    .btn-finish-task, .btn-edit-task {
+        width: 100%; /* Hacer que los botones ocupen el 100% del ancho */
+        margin: 0.5rem 0; /* Ajustar el margen */
+    }
+
+    .btn-finish-task img, .btn-edit-task img {
+        width: 1.5rem; /* Ajustar el tamaño de las imágenes */
+        height: 1.5rem; /* Ajustar el tamaño de las imágenes */
+    }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 1280px) {
+}
