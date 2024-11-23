@@ -32,6 +32,12 @@ body {
     background-color: transparent;
     border: none;
     margin: 1rem;
+
+    transition: all 0.3s ease;
+}
+
+.btn-settings:hover {
+    transform: scale(1.1);
 }
 
 .btn-settings img {
@@ -81,6 +87,15 @@ body {
     color: white;
     font-size: 1rem;
     margin: 2rem;
+    transition: all 0.2s ease;
+}
+
+.btn-create-task:hover {
+    background-color: #3ea739;
+}
+
+.btn-create-task:active {
+    background-color: #266922;
 }
 
 /* ================================== TASKS DESIGN ================================== */
@@ -100,7 +115,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #d9d9d9;
+    background-color: white;
     border-radius: 0.8rem;
 }
 
@@ -122,6 +137,11 @@ body {
     background-color: transparent;
     border: none;
     margin: 0 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-finish-task:hover {
+    transform: scale(1.1);
 }
 
 .btn-edit-task {
@@ -130,6 +150,11 @@ body {
     background-color: transparent;
     border: none;
     margin: 0 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-edit-task:hover {
+    transform: scale(1.1);
 }
 
 .btn-finish-task img, .btn-edit-task img {
@@ -180,6 +205,11 @@ body {
     font-size: 1.3rem;
     font-weight: 600;
     text-align: center;
+    transition: all 0.2s ease;
+}
+
+.btn-confirm-create-task:hover {
+    background-color: #3ea739;
 }
 
 .btn-cancel-create-task {
@@ -193,6 +223,11 @@ body {
     font-size: 1.3rem;
     font-weight: 600;
     text-align: center;
+    transition: all 0.2s ease;
+}
+
+.btn-cancel-create-task:hover {
+    background-color: #7c1e1e;
 }
 
 .btn-confirm-edit-task {
@@ -206,6 +241,11 @@ body {
     font-size: 1.3rem;
     font-weight: 600;
     text-align: center;
+    transition: all 0.2s ease;
+}
+
+.btn-confirm-edit-task:hover {
+    background-color: #3ea739;
 }
 
 .btn-cancel-edit-task {
@@ -219,6 +259,11 @@ body {
     font-size: 1.3rem;
     font-weight: 600;
     text-align: center;
+    transition: all 0.2s ease;
+}
+
+.btn-cancel-edit-task:hover {
+    background-color: #7c1e1e;
 }
 
 .btn-close {
@@ -232,6 +277,11 @@ body {
 
 .txt-blue-pinted {
     color: #005CFC;
+}
+
+.detalles-task:hover {
+    transition: all 0.2s ease;
+    color: #2374ff;
 }
 
 
@@ -250,10 +300,6 @@ body hr.light-mode {
 }
 
 .navbar-container.light-mode {
-    background-color: #fff;
-}
-
-.task.light-mode {
     background-color: #fff;
 }
 

@@ -139,7 +139,7 @@ $("#create-task-form").on("submit", function (e) {
         <div class="task-container">     
         <div class="task">
             <p>${descripcionCorta}</p>
-            <a href="#" class="detalles-task" data-descripcion="${descripcionTarea}" data-fecha="${fechaLimite}" data-prioridad="${prioridad}">Detalles</a>
+            <a class="detalles-task" data-descripcion="${descripcionTarea}" data-fecha="${fechaLimite}" data-prioridad="${prioridad}">Detalles</a>
         </div>
             <button class="btn-finish-task"><img src="View/public/img/finish-task.png" alt=""></button>
             <button class="btn-edit-task"><img src="View/public/img/edit-task.png" alt=""></button>
@@ -246,7 +246,6 @@ $('.btn-settings').on('click', function () {
     $('body').toggleClass('light-mode');
     $('body hr').toggleClass('light-mode');
     $('.navbar-container').toggleClass('light-mode');
-    $('.task').toggleClass('light-mode');
     $('.welcome-container h1').toggleClass('light-mode');
     $('.welcome-container h2').toggleClass('light-mode');
     $('.txt-no-task').toggleClass('light-mode');
