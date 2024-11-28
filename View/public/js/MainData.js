@@ -230,6 +230,8 @@ $("#edit-task-form").on("submit", function (e) {
 
 // Cargar tareas desde localStorage al iniciar la aplicación
 $(document).ready(function () {
+    checkRemainder();
+
     let tareas = JSON.parse(localStorage.getItem('tareas')) || [];
     if (tareas.length > 0) {
         $('.txt-no-task').hide();
@@ -268,5 +270,49 @@ $('.btn-settings').on('click', function () {
             $('.btn-finish-task img').attr('src', 'View/public/img/finish-task-light.png');
             $('.btn-edit-task img').attr('src', 'View/public/img/edit-task-light.png');
         }
-    });
+});
+
+// Enviar notificacion si la tarea esta proxima a vencer y si las notificaciones estan permitidas
+function checkRemainder() {
+    const inputDate = new Date($('#fecha-limite').val());
+    const currentDate = new Date();
+
+    if (isNaN(inputDate.getTime())) {
+        return; // Si no hay fecha, no se hace nada
+    }
+
+    const timeDiff = inputDate.getTime() - currentDate.getTime();
+    const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+    if (daysDiff <= 2 && daysDiff >= 0) {
+        if (Notification.permission === 'granted') {
+            new Notification('¡Atención!', {
+                body: `La tarea "${$('#descripcion-tarea').val()}" está próxima a vencer.`
+            });
+        }
+    } else if (daysDiff < 0) {
+        if (Notification.permission === 'granted') {
+            new Notification('¡Atención!', {
+                body: `La tarea "${$('#descripcion-tarea').val()}" ha vencido.`
+            });
+        }
+    } else {
+        new Notification('¡Atención!', {
+            body: `No hay recordatorios pendientes.`
+        });
+    }
+
+    // Solicitar permiso de notificación al cargar la página
+    if (Notification.permission !== 'granted') {
+        Notification.requestPermission();
+    }
+
+    // Verificar la fecha ingresada cada 10 segundos
+    setInterval(checkRemainder, 10000);
+
+    // Tambien verificar al cambiar la fecha
+    $('#fecha-limite').on('change', checkRemainder);
+}
+
+
 });
