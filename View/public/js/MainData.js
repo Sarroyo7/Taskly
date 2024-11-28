@@ -132,7 +132,7 @@ $("#create-task-form").on("submit", function (e) {
     localStorage.setItem('tareas', JSON.stringify(tasks));
 
     // Truncar la descripción a 15 caracteres si es necesario
-    let descripcionCorta = descripcionTarea.length > 15 ? descripcionTarea.substring(0, 12) + '...' : descripcionTarea;
+    let descripcionCorta = descripcionTarea.length > 15 ? descripcionTarea.substring(0, 15) + '...' : descripcionTarea;
 
     //Hacer uso de append para agregar al body una nueva tarea a la lista
     $('.container-put-tasks').append(`
@@ -141,8 +141,8 @@ $("#create-task-form").on("submit", function (e) {
             <p>${descripcionCorta}</p>
             <a class="detalles-task" data-descripcion="${descripcionTarea}" data-fecha="${fechaLimite}" data-prioridad="${prioridad}">Detalles</a>
         </div>
-            <button class="btn-finish-task"><img src="View/public/img/finish-task.png" alt=""></button>
-            <button class="btn-edit-task"><img src="View/public/img/edit-task.png" alt=""></button>
+            <button class="btn-finish-task"><img src="View/public/img/finish-task-light.png" alt=""></button>
+            <button class="btn-edit-task"><img src="View/public/img/edit-task-light.png" alt=""></button>
         </div>
     `);
 
@@ -206,10 +206,18 @@ $("#edit-task-form").on("submit", function (e) {
                 <p>${descripcionCorta}</p>
                 <a href="#" class="detalles-task" data-descripcion="${tarea.descripcion}" data-fecha="${tarea.fechaLimite}" data-prioridad="${tarea.prioridad}">Detalles</a>
             </div>
-                <button class="btn-finish-task"><img src="View/public/img/finish-task.png" alt=""></button>
-                <button class="btn-edit-task"><img src="View/public/img/edit-task.png" alt=""></button>
+                <button class="btn-finish-task"><img src="View/public/img/finish-task-dark.png"></button>
+                <button class="btn-edit-task"><img src="View/public/img/edit-task-dark.png"></button>
             </div>
         `);
+            // Verificar el estado del modo y ajustar las imágenes de los botones
+            if ($('html').hasClass('light-mode')) {
+                $('.btn-finish-task img').attr('src', 'View/public/img/finish-task-dark.png');
+                $('.btn-edit-task img').attr('src', 'View/public/img/edit-task-dark.png');
+            } else {
+                $('.btn-finish-task img').attr('src', 'View/public/img/finish-task-light.png');
+                $('.btn-edit-task img').attr('src', 'View/public/img/edit-task-light.png');
+            }
     });
 
     $('#editTaskModal').modal('hide');    
@@ -233,8 +241,8 @@ $(document).ready(function () {
                     <p>${descripcionCorta}</p>
                     <a href="#" class="detalles-task" data-descripcion="${tarea.descripcion}" data-fecha="${tarea.fechaLimite}" data-prioridad="${tarea.prioridad}">Detalles</a>
                 </div>
-                    <button class="btn-finish-task"><img src="View/public/img/finish-task.png" alt=""></button>
-                    <button class="btn-edit-task"><img src="View/public/img/edit-task.png" alt=""></button>
+                    <button class="btn-finish-task"><img src="View/public/img/finish-task-light.png" alt=""></button>
+                    <button class="btn-edit-task"><img src="View/public/img/edit-task-light.png" alt=""></button>
                 </div>
             `);
         });
@@ -253,8 +261,12 @@ $('.btn-settings').on('click', function () {
         // Cambiar la imagen del botón de configuración
         if ($('html').hasClass('light-mode')) {
             $('.btn-settings img').attr('src', 'View/public/img/switch-dark-mode.png');
+            $('.btn-finish-task img').attr('src', 'View/public/img/finish-task-dark.png');
+            $('.btn-edit-task img').attr('src', 'View/public/img/edit-task-dark.png');
         } else {
             $('.btn-settings img').attr('src', 'View/public/img/switch-light-mode.png');
+            $('.btn-finish-task img').attr('src', 'View/public/img/finish-task-light.png');
+            $('.btn-edit-task img').attr('src', 'View/public/img/edit-task-light.png');
         }
     });
 });
